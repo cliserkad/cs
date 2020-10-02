@@ -1,0 +1,30 @@
+use java.util.Scanner;
+use java.lang.System;
+
+type MadLibs {
+  // this will be evaluated to a "static final String"
+  const PROMPT: "Please enter a";
+
+  main {
+    // grab keyboard / standard input
+    Scanner scan: Scanner(System.in);
+
+    // acquire words
+    println("$PROMPT verb");
+    string verb: scan.nextLine();
+    println("$PROMPT adjective");
+    string adj: scan.nextLine();
+    println("$PROMPT noun");
+    string noun: scan.nextLine();
+    println("$PROMPT adjective");
+    string adjTwo: scan.nextLine();
+    println("$PROMPT another adjective");
+    string adjThree: scan.nextLine();
+
+    // print out a template with the variables inserted
+    println("I made a $adj language that any $noun can use! It's more $adjThree than Java, but just as $adjTwo so you can still $verb all you want!");
+
+    // not necessary because the entire heap will be discarded, but we should clean up anyway
+    scan.close();
+  }
+}
