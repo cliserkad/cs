@@ -1,0 +1,17 @@
+use java.util.Scanner
+use java.lang.System
+
+type FedIncomeTax {
+    const PERSONAL_EXEMPTION: 4,050_00
+    const STD_DEDUCTION: 6,350_00
+    const HEAD_OF_HOUSE: 9,350_00
+
+
+    main {
+        Scanner input: Scanner(System.in)
+
+
+
+        input.close()
+    }
+}

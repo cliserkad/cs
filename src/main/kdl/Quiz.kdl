@@ -1,0 +1,36 @@
+path main.kdl;
+
+use java.util.Scanner
+use java.lang.System
+
+type Quiz {
+  int~ score: 0
+  Scanner scan: Scanner(System.in)
+
+  main {
+    Quiz quiz: Quiz()
+    quiz.take()
+  }
+
+  take(this) {
+      println("This is a mini quiz!")
+      println("Who is the us president?")
+      string~ input: input()
+      react(input.contains("trump"))
+  }
+
+  string input(this) {
+    string input: scan.nextLine()
+    return input.toLowerCase()
+  }
+
+  react(this, boolean correct) {
+    if correct {
+      score+: 1
+      println("That's RIGHT!")
+    } else {
+      println("That's WRONG!")
+    }
+  }
+
+}
